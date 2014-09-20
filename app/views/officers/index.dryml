@@ -1,0 +1,37 @@
+<!-- ====== Officer Pages ====== -->
+
+<def tag="index-page" for="Officer">
+  <page merge title="#{ht 'officer.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page officer" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="officer.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="officer.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="officer.actions.new">New Officer</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <table-plus fields="this, rank" />
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+<index-page for="Officer"/>
