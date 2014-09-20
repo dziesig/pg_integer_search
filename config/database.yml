@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ntrak1_development
+  pool: 5
+  timeout: 5000
+#  username: donz
+  password: <%= ENV['APP_USER_POSTGRES_PASSWORD'] %>
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: ntrak1_test
+  pool: 5
+  timeout: 5000
+#  username: donz
+  password: <%= ENV['APP_USER_POSTGRES_PASSWORD'] %>
+  
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: ntrak1_production
+  pool: 5
+  timeout: 5000
+#  username: donz
+  password: <%= ENV['APP_USER_POSTGRES_PASSWORD'] %>
+
